@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cabins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>count</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cabins.each do |cabin| %>
+      <tr>
+        <td><%= cabin.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cabin', new_cabin_path %>
