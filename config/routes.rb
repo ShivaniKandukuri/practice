@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     member do
       get :articles
     end
+    member do
+      get :magazine
+    end
   end
   resources :sessions
   get 'login',to:'sessions#new'
@@ -16,6 +19,14 @@ Rails.application.routes.draw do
     member do
       get :cabins
     end
+    collection do
+      get :search_office
+    end
   end
   resources :cabins
+  resources :magazines
+  resources :users do
+    resources :magazines
+  end
+  resources :categories
 end
