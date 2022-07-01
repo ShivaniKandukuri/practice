@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_29_122800) do
+ActiveRecord::Schema.define(version: 2022_07_01_075237) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -33,6 +33,14 @@ ActiveRecord::Schema.define(version: 2022_06_29_122800) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "magazines", force: :cascade do |t|
+    t.string "name"
+    t.integer "cost"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+  end
+
   create_table "models", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -52,6 +60,11 @@ ActiveRecord::Schema.define(version: 2022_06_29_122800) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "schools", force: :cascade do |t|
+    t.string "name"
+    t.text "address"
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "name"
     t.integer "clas"
@@ -66,6 +79,7 @@ ActiveRecord::Schema.define(version: 2022_06_29_122800) do
     t.string "email"
     t.string "password_digest"
     t.string "addrees"
+    t.boolean "admin", default: false
   end
 
 end

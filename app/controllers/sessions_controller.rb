@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   end
   def destroy
     sessoin[:user_id]=nil
-    flash[notice:]= "Looged  off" }
+    flash.now[:alert]="There was something wrong" 
     redirect_to root_path
   end
 end
