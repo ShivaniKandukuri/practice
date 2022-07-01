@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy articles ]
+  before_action :set_user, only: %i[ show edit update destroy articles magazine]
 
   # GET /users or /users.json
   def index
@@ -14,7 +14,9 @@ class UsersController < ApplicationController
   def articles
     @articles = @user.articles.paginate(:page => params[:page], :per_page=>2)
   end
-
+  def magazine
+    @magazine=@user.magazine
+  end
   # GET /users/new
   def new
     @user = User.new

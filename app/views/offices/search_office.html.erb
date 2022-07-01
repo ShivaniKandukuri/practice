@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cabins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Count</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cabins.each do |cabin| %>
+      <tr>
+        <td><%= cabin.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
