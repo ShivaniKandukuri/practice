@@ -5,13 +5,16 @@ class SessionsController < ApplicationController
     user=User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       session[:user_id]=user.id
+      flash[:notice]="Logged in sucessfully"
+      redirect_to user
     else
+      flash[:alert]="there was something wring with login crdentials"
       render 'new'
     end
   end
   def destroy
     sessoin[:user_id]=nil
-    format.html { redirect_to root_path, notice: "Looged  off" }
+    flash[notice:]= "Looged  off" }
     redirect_to root_path
   end
 end
