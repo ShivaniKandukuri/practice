@@ -38,7 +38,6 @@ class CategoriesController < ApplicationController
     else
       render 'edit'
     end
-  end
 
   private
 

@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-  root to:'pages#index'
+  root to:'pages#home'
   devise_for :models
   resources :articles
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users do
     member do
       get :articles
+    end
+    member do
+      get :magazine
     end
   end
   resources :sessions
@@ -16,7 +19,16 @@ Rails.application.routes.draw do
     member do
       get :cabins
     end
+    collection do
+      get :search_office
+    end
   end
   resources :cabins
-  resources :categories, except: [:destro]
+
+  resources :magazines
+  resources :users do
+    resources :magazines
+  end
+  resources :categories
+
 end

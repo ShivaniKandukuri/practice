@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Magazines</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Cost</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @magazines.each do |m| %>
+      <tr>
+        <td><%= m.name %></td>
+        <td><%= m.cost %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'New magazine', new_magazine_path %>
