@@ -24,9 +24,11 @@ Rails.application.routes.draw do
     end
   end
   resources :cabins
+
   resources :magazines
   resources :users do
     resources :magazines
   end
   resources :categories
+
 end
