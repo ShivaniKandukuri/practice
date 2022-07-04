@@ -8,15 +8,9 @@
 # migrations from scratch. Old migrations may fail to apply correctly if those
 # migrations use external dependencies or application code.
 #
-# It's strongly recommended that you check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_07_04_054347) do
-=======
-
-ActiveRecord::Schema.define(version: 2022_07_01_075237) do
-
->>>>>>> 85cc73fafd9a1ccb91caa76dfea9cda6bb9bec56
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
